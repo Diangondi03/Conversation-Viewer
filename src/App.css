@@ -1,0 +1,116 @@
+
+.container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+#message-list{
+  display: flex;
+  flex-direction: column;
+
+}
+.message {
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  width: fit-content;
+  font-weight: 600;
+  position: relative;
+  z-index: 0;
+}
+.message:focus{
+  border: 2px solid black;
+}
+
+.message.sender {
+  background-color: #d1e7dd;
+  text-align: left;
+  border-top-left-radius: 0%;
+}
+
+.message.sender::before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: -20px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent #d1e7dd transparent transparent;
+}
+
+.message.bot {
+  background-color: #d6b3e5;
+  align-self: flex-end;
+  text-align: left;
+  border-top-right-radius: 0%;
+}
+.message.bot::after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  right: -20px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent #d6b3e5;
+}
+
+.message .message-text {
+  margin-bottom: 5px;
+}
+
+.message .message-date {
+  font-size: 0.8em;
+  color: #777;
+  text-align: end;
+  margin: 5px 0;
+}
+
+.sticky-date {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  font-weight: bold;
+  z-index: 10;
+}
+
+.date-separator {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 0.9rem;
+  font-weight: light;
+  color: black;
+  background-color: #ccc;
+  align-self: center;
+  padding: 7px;
+  border-radius: 5px;
+  width: fit-content;
+  position: sticky;
+  top: 0px;
+  z-index: 10;
+}
+
+.reply{
+  background-color: #cc96e3;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
